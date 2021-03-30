@@ -1,0 +1,605 @@
+XML MAIN ACTIVITY
+
+................................................
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+-<android.widget.LinearLayout tools:context=".MainActivity" 
+android:orientation="vertical" 
+android:layout_height="match_parent" 
+android:layout_width="match_parent" 
+xmlns:tools="http://schemas.android.com/tools"
+xmlns:android="http://schemas.android.com/apk/res/android">
+
+<TextView 
+android:layout_height="wrap_content" 
+android:layout_width="wrap_content" 
+android:textStyle="bold" 
+android:textSize="40dp" 
+android:textColor="#000000" 
+android:text="Student information" 
+android:layout_gravity="center"/>
+
+<TextView 
+android:layout_height="wrap_content" 
+android:layout_width="wrap_content" 
+android:textStyle="bold" 
+android:textSize="20dp" 
+android:textColor="#000000"
+android:text="CRUD with SQLite Database" 
+android:layout_gravity="center"/>
+
+<Button 
+android:layout_height="wrap_content" 
+android:layout_width="match_parent" 
+android:text="View all Students" 
+android:tag="viewButton" 
+android:onClick="buttonPressed"/>
+
+<Button 
+android:layout_height="wrap_content" 
+android:layout_width="match_parent" 
+android:text="Add a Student" 
+android:tag="addButton" 
+android:onClick="buttonPressed"/>
+
+<Button 
+android:layout_height="wrap_content" 
+android:layout_width="match_parent" 
+android:text="Update a Student's record" 
+android:tag="updateButton" 
+android:onClick="buttonPressed"/>
+
+<Button 
+android:layout_height="wrap_content" 
+android:layout_width="match_parent" 
+android:text="Delete A Student" 
+android:tag="deleteButton" 
+android:onClick="buttonPressed"/>
+
+</android.widget.LinearLayout>
+
+................................................
+CREATE Activity
+activity_add_student
+................................................
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+-<android.widget.LinearLayout tools:context=".AddStudentActivity" 
+android:orientation="vertical" 
+android:layout_height="match_parent" 
+android:layout_width="match_parent" 
+xmlns:tools="http://schemas.android.com/tools" 
+xmlns:android="http://schemas.android.com/apk/res/android">
+
+<TextView 
+android:layout_height="wrap_content" 
+android:layout_width="wrap_content" 
+android:textStyle="bold" android:textSize="40dp" 
+android:textColor="#000000" 
+android:text="Add a Student to DB" 
+android:layout_gravity="center"/>
+
+
+-<LinearLayout android:orientation="horizontal" 
+android:layout_height="wrap_content" 
+android:layout_width="match_parent">
+
+<TextView android:layout_height="wrap_content" 
+android:layout_width="wrap_content" 
+android:textStyle="bold" 
+android:textColor="#000000" 
+android:text="Name: "/>
+
+<EditText
+android:layout_height="wrap_content" 
+android:layout_width="match_parent" 
+android:layout_weight="1" 
+android:id="@+id/nameEditText"/>
+
+</LinearLayout>
+
+
+<LinearLayout 
+android:orientation="horizontal" 
+android:layout_height="wrap_content" 
+android:layout_width="match_parent">
+
+<TextView 
+android:layout_height="wrap_content" 
+android:layout_width="wrap_content" 
+android:textStyle="bold" 
+android:textColor="#000000" 
+android:text="Mobile: "/>
+
+<EditText 
+android:layout_height="wrap_content"
+android:layout_width="match_parent" 
+android:layout_weight="1" 
+android:id="@+id/mobileEditText"/>
+
+</LinearLayout>
+
+<Button 
+android:layout_height="wrap_content" 
+android:layout_width="wrap_content" 
+android:text="Add" 
+android:layout_gravity="center" 
+android:onClick="addButtonPressed"/>
+
+</android.widget.LinearLayout>
+
+................................................
+CREATE Activity
+activity_View_student
+................................................
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<android.widget.LinearLayout 
+android:id="@+id/myLinearLayout" 
+tools:context=".ViewStudentsActivity" 
+android:layout_height="match_parent" 
+android:layout_width="match_parent" 
+xmlns:tools="http://schemas.android.com/tools" 
+xmlns:app="http://schemas.android.com/apk/res-auto" 
+xmlns:android="http://schemas.android.com/apk/res/android" 
+android:orientation="vertical">
+
+<TextView 
+android:layout_height="wrap_content" 
+android:layout_width="wrap_content" 
+android:textStyle="bold" 
+android:layout_gravity="center" 
+android:textSize="40dp" 
+android:textColor="#000000" 
+android:text="Students"/>
+
+<!-- This GUI is created dynamically. See ViewStudentsActivity. java-->
+
+
+</android.widget.LinearLayout>
+
+................................................
+CREATE Activity
+activity_update_student
+................................................
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+-<android.widget.LinearLayout 
+tools:context=".UpdateStudentActivity" 
+android:layout_height="match_parent" 
+android:layout_width="match_parent" 
+xmlns:tools="http://schemas.android.com/tools" 
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:android="http://schemas.android.com/apk/res/android" 
+android:orientation="vertical">
+
+<TextView
+android:layout_height="wrap_content" 
+android:layout_width="wrap_content" 
+android:textStyle="bold" android:textSize="35dp" 
+android:textColor="#000000" 
+android:text="Update Student Record" 
+android:layout_gravity="center"/>
+
+<TextView 
+android:layout_height="wrap_content" 
+android:layout_width="wrap_content" 
+android:textStyle="bold" 
+android:textColor="#000000" 
+android:text="Enter name of student to update record" 
+android:layout_gravity="center"/>
+
+<EditText 
+android:layout_height="wrap_content" 
+android:layout_width="match_parent" 
+android:id="@+id/name1ET"/>
+
+<TextView 
+android:layout_height="wrap_content" 
+android:layout_width="wrap_content" 
+android:textStyle="bold" 
+android:textColor="#000000" 
+android:text="Enter student's updated information" 
+android:layout_gravity="center"/>
+
+
+<LinearLayout 
+android:layout_height="wrap_content" 
+android:layout_width="match_parent" 
+android:orientation="horizontal">
+
+<TextView 
+android:layout_height="wrap_content" 
+android:layout_width="wrap_content" 
+android:textStyle="bold" 
+android:textColor="#000000" 
+android:text="Name: "/>
+
+<EditText 
+android:layout_height="wrap_content"
+android:layout_width="match_parent" 
+android:id="@+id/name2ET" 
+android:layout_weight="1"/>
+
+</LinearLayout>
+
+
+<LinearLayout 
+android:layout_height="wrap_content" 
+android:layout_width="match_parent" 
+android:orientation="horizontal">
+
+<TextView 
+android:layout_height="wrap_content" 
+android:layout_width="wrap_content" 
+android:textStyle="bold" 
+android:textColor="#000000" 
+android:text="Mobile: "/>
+
+<EditText 
+android:layout_height="wrap_content" 
+android:layout_width="match_parent" 
+android:id="@+id/mobile1ET" 
+android:layout_weight="1"/>
+
+</LinearLayout>
+
+<Button 
+android:layout_height="wrap_content" 
+android:layout_width="wrap_content" 
+android:text="Update" 
+android:layout_gravity="center" 
+android:onClick="updateButtonPressed"/>
+
+</android.widget.LinearLayout>
+
+................................................
+CREATE Activity
+activity_Dlete_student
+................................................
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<android.widget.LinearLayout tools:context=".DeleteStudentActivity" android:layout_height="match_parent" android:layout_width="match_parent" xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical">
+
+<TextView 
+android:layout_height="wrap_content" 
+android:layout_width="wrap_content" 
+android:textStyle="bold" 
+android:textSize="35dp"
+android:textColor="#000000" 
+android:text="Delete a Student from DB" 
+android:layout_gravity="center"/>
+
+<TextView 
+android:layout_height="wrap_content" 
+android:layout_width="wrap_content" 
+android:textStyle="bold" 
+android:textColor="#000000" 
+android:text="Enter name of student to delete" 
+android:layout_gravity="center"/>
+
+<EditText 
+android:layout_height="wrap_content" 
+android:layout_width="match_parent" 
+android:id="@+id/deleteEditText"/>
+
+<Button 
+android:layout_height="wrap_content" 
+android:layout_width="wrap_content" 
+android:text="Delete" 
+android:layout_gravity="center" 
+android:id="@+id/deleteStudentButton" 
+android:onClick="deleteButtonPressed"/>
+
+</android.widget.LinearLayout>
+
+................................................
+MainActivity JAVA
+................................................
+package com.teepstech.sqlitecrud;
+
+import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+
+public class MainActivity extends AppCompatActivity {
+    private SQLiteDatabase db;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        DatabaseHandler.loadDatabase(this);
+    }
+
+    public void buttonPressed(View view) {
+        String tag = view.getTag().toString().toLowerCase();
+        switch (tag) {
+            case "viewbutton": {
+                Intent intent = new Intent(MainActivity.this, ViewStudentsActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case "addbutton": {
+                Intent intent = new Intent(MainActivity.this, AddStudentActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case "deletebutton": {
+                Intent intent = new Intent(MainActivity.this, DeleteStudentActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case "updatebutton": {
+                Intent intent = new Intent(MainActivity.this, UpdateStudentActivity.class);
+                startActivity(intent);
+                break;
+            }
+        }
+    }
+}
+
+................................................
+Add Student JAVA
+................................................
+package com.teepstech.sqlitecrud;
+
+import android.database.sqlite.SQLiteDatabase;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import java.util.Scanner;
+
+public class AddStudentActivity extends AppCompatActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_add_student);
+
+    }
+
+    public void addButtonPressed(View view) {
+        EditText nameEditText = findViewById(R.id.nameEditText);
+        EditText mobileEditText = findViewById(R.id.mobileEditText);
+
+        String name = nameEditText.getText().toString();
+        String mobile = mobileEditText.getText().toString();
+
+        addToDatabase(name, mobile);
+
+        nameEditText.setText("");
+        mobileEditText.setText("");
+    }
+
+
+    private void addToDatabase(String name, String mobile) {
+        DatabaseHandler.addToDatabase(name, mobile);
+        Toast.makeText(this, "Record Added",Toast.LENGTH_SHORT).show();
+    }
+}
+
+................................................
+View Student JAVA
+................................................
+
+package com.teepstech.sqlitecrud;
+
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.Gravity;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.Scanner;
+
+public class ViewStudentsActivity extends AppCompatActivity {
+    private Cursor cr;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_view_students);
+
+        displayStudents();
+    }
+
+
+    public void displayStudents(){
+
+        cr = DatabaseHandler.readDatabase();
+        LinearLayout parent = (LinearLayout) findViewById(R.id.myLinearLayout);
+
+
+        int count =0;
+        if(!cr.moveToFirst()){
+            Toast.makeText(this, "Students not found. Database empty", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        do{
+            count++;
+            //display each student here
+            String nameDB = cr.getString(1); //column no 2
+            String numberDB = cr.getString(2); //column no 3
+
+            LinearLayout child = new LinearLayout(this);
+            child.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+            child.setOrientation(LinearLayout.HORIZONTAL);
+
+            TextView name = new TextView(this);
+            TextView number = new TextView(this);
+
+            name.setTextColor(Color.BLACK);
+            number.setTextColor(Color.BLACK);
+
+            //set textview weight = 1
+            TableRow.LayoutParams params = new TableRow.LayoutParams(0, TableLayout.LayoutParams.WRAP_CONTENT, 1f);
+            name.setLayoutParams(params);
+            number.setLayoutParams(params);
+
+
+            name.setText(nameDB);
+            number.setText("\t\t\t"+numberDB);
+
+            parent.addView(child);
+            child.addView(name);
+            child.addView(number);
+
+
+
+        }while(cr.moveToNext());
+        
+        Log.d("DEBUG", "COUNT: "+count);
+
+    }
+}
+
+................................................
+Update Student JAVA
+................................................
+
+package com.teepstech.sqlitecrud;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class UpdateStudentActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_update_student);
+    }
+
+    public void updateButtonPressed(View view) {
+        EditText oldNameET = findViewById(R.id.name1ET);
+        EditText newNameET = findViewById(R.id.name2ET);
+        EditText mobileET = findViewById(R.id.mobile1ET);
+
+        String oldName = oldNameET.getText().toString();
+        String newName = newNameET.getText().toString();
+        String newMobile = mobileET.getText().toString();
+
+        DatabaseHandler.updateUsingName(oldName, newName, newMobile);
+        Toast.makeText(this, "Record updated", Toast.LENGTH_SHORT).show();
+
+        oldNameET.setText("");
+        newNameET.setText("");
+        mobileET.setText("");
+    }
+}
+
+................................................
+Dlete Student JAVA
+...............................................
+
+package com.teepstech.sqlitecrud;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class DeleteStudentActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_delete_student);
+    }
+
+    public void deleteButtonPressed(View view) {
+        EditText editText = findViewById(R.id.deleteEditText);
+        String text = editText.getText().toString();
+        int deleted = DatabaseHandler.deleteUsingName(text);
+        Toast.makeText(this, deleted +" records deleted", Toast.LENGTH_SHORT).show();
+        editText.setText("");
+    }
+}
+
+................................................
+Just Create a Java File
+DataBase Handler JAVA
+...............................................
+
+package com.teepstech.sqlitecrud;
+
+import android.content.Context;
+import android.database.Cursor;
+import android.database.DatabaseUtils;
+import android.database.sqlite.SQLiteDatabase;
+
+import java.util.Scanner;
+
+import static android.content.Context.MODE_PRIVATE;
+
+public class DatabaseHandler {
+    private static SQLiteDatabase db;
+    private static Cursor cr;
+    private static int count = 0; //primary key of database
+
+    //Read database schema from raw resources and create the database
+    public static void loadDatabase(Context context) {
+        db = context.openOrCreateDatabase("database", MODE_PRIVATE, null);
+        Scanner scan = new Scanner(context.getResources().openRawResource(R.raw.database));
+        String query = "";
+        while (scan.hasNextLine()) {
+            query += scan.nextLine() + "\n";
+            if (query.trim().endsWith(";")) {
+                db.execSQL(query);
+                query = "";
+            }
+        }
+
+        count = (int) DatabaseUtils.queryNumEntries(db, "students");
+    }
+
+    //read everything there is in the database
+    public static Cursor readDatabase() {
+        String query1 = "SELECT * FROM students";
+        cr = db.rawQuery(query1, null);
+        return cr;
+    }
+
+    // add a new student's record to the database
+    public static void addToDatabase(String name, String mobile) {
+        count++;
+        String sql = "INSERT INTO students VALUES (" + count + ",'" + name + "','" + mobile + "');";
+        db.execSQL(sql);
+    }
+
+    // Search a student's record by name and delete it
+    public static int deleteUsingName(String name) {
+        String table = "students";
+        String whereClause = "name=?";
+        String[] whereArgs = new String[]{name};
+        int deleted = db.delete(table, whereClause, whereArgs);
+        return deleted;
+    }
+
+    // Search a student's record by name and updateit
+    public static void updateUsingName(String oldName, String newName, String newMobile){
+        String sql = "UPDATE students SET name = '"+newName+"', mobile = '"+newMobile+"' WHERE name = '"+oldName+"';";
+        db.execSQL(sql);
+    }
+}
